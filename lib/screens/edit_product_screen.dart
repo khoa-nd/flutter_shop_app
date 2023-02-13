@@ -86,7 +86,6 @@ class _EditProductScreenState extends State<EditProductScreen> {
     } else {
       Provider.of <Products>(context, listen: false).addProduct(_editedProduct);
     }
-    Provider.of<Products>(context, listen: false).addProduct(_editedProduct);
     Navigator.of(context).pop();
   }
 
@@ -121,7 +120,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     onSaved: (value) {
                       _editedProduct = Product(
                           id: null,
-                          title: _editedProduct.title,
+                          title: value,
                           description: _editedProduct.description,
                           price: _editedProduct.price,
                           imageUrl: _editedProduct.imageUrl);
